@@ -23,11 +23,26 @@ def zaidejo_input():
         lentele[inputas-1] = zaidejas
 
 def tikrinti_vertikalei():
-    if lentele[0]==lentele[3]==lentele[6] or lentele[1]==lentele[4]==lentele[7] or lentele[2]==lentele[5]==lentele[8]:
+    if (lentele[0]==lentele[3]==lentele[6] or
+            lentele[1]==lentele[4]==lentele[7] or
+            lentele[2]==lentele[5]==lentele[8]):
         print("sveikiname jus laimejote")
+
+def tikrinti_horizontaliai():
+    if (lentele[0]==lentele[1]==lentele[2] or
+            lentele[3]==lentele[4]==lentele[5] or
+            lentele[6]==lentele[7]==lentele[8]):
+        print("sveikiname jus laimejote")
+
+def tikrinti_istrizai():
+    if lentele[6]==lentele[4]==lentele[2] or lentele[0]==lentele[4]==lentele[8]:
+        print("veikiname jus laimejote")
+
 
 
 while True:
     print(print_lentele())
     zaidejo_input()
     tikrinti_vertikalei()
+    tikrinti_horizontaliai()
+    tikrinti_istrizai()
