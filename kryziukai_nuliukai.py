@@ -15,4 +15,15 @@ def print_lentele():
     print(lentele[0] + "|" + lentele[1] + "|" + lentele[2])
     print(lentele[3] + "|" + lentele[4] + "|" + lentele[5])
     print(lentele[6] + "|" + lentele[7] + "|" + lentele[8])
-print(print_lentele())
+
+
+zaidejas = "x"
+
+def zaidejo_input():
+    inputas = int(input("iveskite skaiciu nuo 1 iki 9"))
+    if inputas <= 1 or inputas <= 9:
+        lentele[inputas-1] = zaidejas
+
+while True:
+    print(print_lentele())
+    zaidejo_input()
