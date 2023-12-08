@@ -4,4 +4,4 @@
 # Žaidimas vyktų konsolėje, grafinio interfeiso nereikia (bet galima daryti, tada konsolės nebereikia)
 # Sukurtą žaidimą paskelbti github repozitorijoje, nuorodą paskelbti teamsuose, tam skirtoje užduotyje (Assignments)
 
-print("Hello world")
+lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
