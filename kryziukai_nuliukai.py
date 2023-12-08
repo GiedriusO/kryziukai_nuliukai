@@ -1,26 +1,17 @@
-# Sukurti kryžiukų/nuliukų žaidimą, kuris:
-# Leistų žaisti dviems žaidėjams (X ir O)
-# Teisingai fiksuotų vieno iš žaidėjų laimėjimą arba lygiasias ir stabdytų žaidimą
-# Žaidimas vyktų konsolėje, grafinio interfeiso nereikia (bet galima daryti, tada konsolės nebereikia)
-# Sukurtą žaidimą paskelbti github repozitorijoje, nuorodą paskelbti teamsuose, tam skirtoje užduotyje (Assignments)
-# 1 lentele
-# 2 zaidejas
-# 3 inputas
-# 4 kazkokio loop jog zaisti
-# 5 tikrinti ar laimejo/lygiosios ir uzbaigti loop
 
 lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-zaidejas = "x"
+zaidejas = "X"
 
 
 def print_lentele(lentele):
-    print(lentele[0] + "|" + lentele[1] + "|" + lentele[2])
-    print(lentele[3] + "|" + lentele[4] + "|" + lentele[5])
-    print(lentele[6] + "|" + lentele[7] + "|" + lentele[8])
-
+    print("_____")
+    print(lentele[0] + "|" + lentele[1] + "|" + lentele[2], f"      Dabar zaidejo  {zaidejas}  ejimas")
+    print(lentele[3] + "|" + lentele[4] + "|" + lentele[5],)
+    print(lentele[6] + "|" + lentele[7] + "|" + lentele[8], f"      Pasirinkite zenklo pozicija skaiciais nuo 1 iki 9 ")
+    print("¯¯¯¯¯")
 def zaidejo_input(lentele):
     try:
-        inputas = int(input("iveskite skaiciu nuo 1 iki 9  "))
+        inputas = int(input())
         if inputas >= 1 and inputas <= 9 and  lentele[inputas-1].isdigit():
             lentele[inputas-1] = zaidejas
             return True
@@ -60,18 +51,17 @@ def tikrinti_lygiasias(lentele):
 
 
 while True:
-    print(f"dabar eina {zaidejas}")
     print_lentele(lentele)
 
     if zaidejo_input(lentele):
         if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
             print_lentele(lentele)
-            print(f"zaidejas {zaidejas} laimejo!!")
+            print(f"zaidejas {zaidejas} laimejo!! 👍👍  ")
             break
         if tikrinti_lygiasias(lentele):
-            print("lygiosios")
+            print("Lygiosios ¯\\_(°‿°)_/¯")
             break
-        if zaidejas == "x":
-            zaidejas = "o"
-        elif zaidejas == "o":
-            zaidejas = "x"
+        if zaidejas == "X":
+            zaidejas = "O"
+        elif zaidejas == "O":
+            zaidejas = "X"
