@@ -51,12 +51,14 @@ def tikrinti_lygiasias(lentele):
     return True
 
 
+
 while True:
     print(f"dabar eina {zaidejas}")
-    print(print_lentele(lentele))
+    print_lentele(lentele)
 
     zaidejo_input(lentele)
     if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
+        print_lentele(lentele)
         print(f"zaidejas {zaidejas} laimejo!!")
         break
     if tikrinti_lygiasias(lentele):
