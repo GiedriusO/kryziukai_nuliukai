@@ -29,17 +29,20 @@ def tikrinti_vertikalei(lentele):
     if (lentele[0]==lentele[3]==lentele[6] or
             lentele[1]==lentele[4]==lentele[7] or
             lentele[2]==lentele[5]==lentele[8]):
-        print("sveikiname jus laimejote")
+        return True
+    return False
 
 def tikrinti_horizontaliai(lentele):
     if (lentele[0]==lentele[1]==lentele[2] or
             lentele[3]==lentele[4]==lentele[5] or
             lentele[6]==lentele[7]==lentele[8]):
-        print("sveikiname jus laimejote")
+        return True
+    return False
 
 def tikrinti_istrizai(lentele):
     if lentele[6]==lentele[4]==lentele[2] or lentele[0]==lentele[4]==lentele[8]:
-        print("veikiname jus laimejote")
+        return True
+    return False
 
 def tikrinti_lygiasias(lentele):
     for index in lentele:
@@ -49,16 +52,18 @@ def tikrinti_lygiasias(lentele):
 
 
 while zaidimas_vyksta:
+    print(f"dabar eina {zaidejas}")
+    print(print_lentele(lentele))
+
+    zaidejo_input(lentele)
+    if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
+        print(f"zaidejas {zaidejas} laimejo!!")
+        zaidimas_vyksta = False
+        break
+    if tikrinti_lygiasias(lentele):
+        print("lygiosios")
+        break
     if zaidejas == "x":
         zaidejas = "o"
     elif zaidejas == "o":
         zaidejas = "x"
-    print(f"dabar eina {zaidejas}")
-    print(print_lentele(lentele))
-    zaidejo_input(lentele)
-    tikrinti_vertikalei(lentele)
-    tikrinti_horizontaliai(lentele)
-    tikrinti_istrizai(lentele)
-    # tikrinti_lygiasias(lentele)
-    if tikrinti_lygiasias(lentele):
-        print("lygiosios")
