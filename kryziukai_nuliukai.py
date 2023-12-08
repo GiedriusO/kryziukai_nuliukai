@@ -19,14 +19,18 @@ def print_lentele(lentele):
     print(lentele[6] + "|" + lentele[7] + "|" + lentele[8])
 
 def zaidejo_input(lentele):
-    inputas = int(input("iveskite skaiciu nuo 1 iki 9"))
     try:
+        inputas = int(input("iveskite skaiciu nuo 1 iki 9  "))
         if inputas >= 1 and inputas <= 9 and  lentele[inputas-1].isdigit():
             lentele[inputas-1] = zaidejas
             return True
-    except:
-        print("netinkamas pasirinkimas")
+        else:
+            print("Tamsta nebukit rusas si vieta jau uzimta :)")
+            return False
+    except ValueError:
+        print("Ups atrodo jum reikia pakeisti klavieturos kalba nes tai buvo raide ne skaicius :)")
         return False
+
 
 def tikrinti_vertikalei(lentele):
     if (lentele[0]==lentele[3]==lentele[6] or
