@@ -11,7 +11,7 @@
 
 lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 zaidejas = "x"
-zaidimas_vyksta = True
+
 
 def print_lentele(lentele):
     print(lentele[0] + "|" + lentele[1] + "|" + lentele[2])
@@ -51,14 +51,13 @@ def tikrinti_lygiasias(lentele):
     return True
 
 
-while zaidimas_vyksta:
+while True:
     print(f"dabar eina {zaidejas}")
     print(print_lentele(lentele))
 
     zaidejo_input(lentele)
     if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
         print(f"zaidejas {zaidejas} laimejo!!")
-        zaidimas_vyksta = False
         break
     if tikrinti_lygiasias(lentele):
         print("lygiosios")
