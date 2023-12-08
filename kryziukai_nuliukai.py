@@ -20,8 +20,10 @@ def print_lentele(lentele):
 
 def zaidejo_input(lentele):
     inputas = int(input("iveskite skaiciu nuo 1 iki 9"))
-    if inputas <= 1 or inputas <= 9:
+    if inputas >= 1 and inputas <= 9 and  lentele[inputas-1].isdigit():
         lentele[inputas-1] = zaidejas
+    else:
+        print("neteisingas pasirinkimas")
 
 def tikrinti_vertikalei(lentele):
     if (lentele[0]==lentele[3]==lentele[6] or
