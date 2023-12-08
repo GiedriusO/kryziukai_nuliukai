@@ -20,10 +20,13 @@ def print_lentele(lentele):
 
 def zaidejo_input(lentele):
     inputas = int(input("iveskite skaiciu nuo 1 iki 9"))
-    if inputas >= 1 and inputas <= 9 and  lentele[inputas-1].isdigit():
-        lentele[inputas-1] = zaidejas
-    else:
-        print("neteisingas pasirinkimas")
+    try:
+        if inputas >= 1 and inputas <= 9 and  lentele[inputas-1].isdigit():
+            lentele[inputas-1] = zaidejas
+            return True
+    except:
+        print("netinkamas pasirinkimas")
+        return False
 
 def tikrinti_vertikalei(lentele):
     if (lentele[0]==lentele[3]==lentele[6] or
@@ -56,15 +59,15 @@ while True:
     print(f"dabar eina {zaidejas}")
     print_lentele(lentele)
 
-    zaidejo_input(lentele)
-    if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
-        print_lentele(lentele)
-        print(f"zaidejas {zaidejas} laimejo!!")
-        break
-    if tikrinti_lygiasias(lentele):
-        print("lygiosios")
-        break
-    if zaidejas == "x":
-        zaidejas = "o"
-    elif zaidejas == "o":
-        zaidejas = "x"
+    if zaidejo_input(lentele):
+        if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
+            print_lentele(lentele)
+            print(f"zaidejas {zaidejas} laimejo!!")
+            break
+        if tikrinti_lygiasias(lentele):
+            print("lygiosios")
+            break
+        if zaidejas == "x":
+            zaidejas = "o"
+        elif zaidejas == "o":
+            zaidejas = "x"
