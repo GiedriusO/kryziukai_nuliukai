@@ -48,6 +48,14 @@ def tikrinti_lygiasias(lentele):
             return False
     return True
 
+def ar_zaisti_darkart():
+    while True:
+        zaisti_vel = str.casefold(input("Ar norite zaisti dar karta? (Y/N) "))
+        if zaisti_vel == "y":
+            return True
+        if zaisti_vel == "n":
+            return False
+
 
 
 while True:
@@ -57,7 +65,11 @@ while True:
         if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
             print_lentele(lentele)
             print(f"zaidejas {zaidejas} laimejo!! 👍👍  ")
-            break
+            if ar_zaisti_darkart():
+                lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+                zaidejas = "O"
+            else:
+                break
         if tikrinti_lygiasias(lentele):
             print("Lygiosios ¯\\_(°‿°)_/¯")
             break
