@@ -70,10 +70,14 @@ while True:
             print(f"zaidejas {zaidejas} laimejo!! 👍👍  ")
             if ar_zaisti_darkart():
                 isvalyti_lentele()
+            else:
+                break
         if tikrinti_lygiasias(lentele):
             print("Lygiosios ¯\\_(°‿°)_/¯")
             if ar_zaisti_darkart():
                 isvalyti_lentele()
+            else:
+                break
         if zaidejas == "X":
             zaidejas = "O"
         elif zaidejas == "O":
