@@ -56,10 +56,9 @@ def ar_zaisti_darkart():
         if zaisti_vel == "n":
             return False
 def isvalyti_lentele():
-    global lentele
+    global lentele, zaidejas
     lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-
+    zaidejas = "O"
 
 while True:
     print_lentele(lentele)
