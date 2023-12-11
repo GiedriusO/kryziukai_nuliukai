@@ -1,6 +1,8 @@
 
 lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 zaidejas = "X"
+zaidejas_X = 0
+zaidejas_O = 0
 
 
 def print_lentele(lentele):
@@ -60,15 +62,23 @@ def isvalyti_lentele():
     lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     zaidejas = "O"
 
+def laimejimu_skaitiklis():
+    print("                     Rezultatas:")
+    print(f"                    Zaidejas X = {zaidejas_X}")
+    print(f"                    Zaidejas O = {zaidejas_O}")
 while True:
     print_lentele(lentele)
-
     if zaidejo_input(lentele):
         if tikrinti_vertikalei(lentele) or tikrinti_horizontaliai(lentele) or tikrinti_istrizai(lentele):
             print_lentele(lentele)
             print(f"zaidejas {zaidejas} laimejo!! 👍👍  ")
+            if zaidejas == "X":
+                zaidejas_X += 1
+            if zaidejas == "O":
+                zaidejas_O += 1
             if ar_zaisti_darkart():
                 isvalyti_lentele()
+                laimejimu_skaitiklis()
             else:
                 break
         if tikrinti_lygiasias(lentele):
