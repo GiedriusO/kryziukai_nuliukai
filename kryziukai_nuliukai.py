@@ -16,7 +16,7 @@ def zaidejo_input(lentele):
             lentele[inputas-1] = zaidejas
             return True
         else:
-            print("Tamsta nebukit rusas si vieta jau uzimta :)")
+            print("Nesukciaujam si vieta jau uzimta :)")
             return False
     except ValueError:
         print("Ups atrodo jum reikia pakeisti klavieturos kalba nes tai buvo raide ne skaicius :)")
