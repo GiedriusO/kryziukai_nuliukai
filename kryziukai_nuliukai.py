@@ -55,6 +55,9 @@ def ar_zaisti_darkart():
             return True
         if zaisti_vel == "n":
             return False
+def isvalyti_lentele():
+    global lentele
+    lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
 
@@ -66,13 +69,11 @@ while True:
             print_lentele(lentele)
             print(f"zaidejas {zaidejas} laimejo!! 👍👍  ")
             if ar_zaisti_darkart():
-                lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-                zaidejas = "O"
-            else:
-                break
+                isvalyti_lentele()
         if tikrinti_lygiasias(lentele):
             print("Lygiosios ¯\\_(°‿°)_/¯")
-            break
+            if ar_zaisti_darkart():
+                isvalyti_lentele()
         if zaidejas == "X":
             zaidejas = "O"
         elif zaidejas == "O":
