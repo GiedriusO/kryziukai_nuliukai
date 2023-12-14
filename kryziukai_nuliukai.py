@@ -2,6 +2,8 @@ lentele = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 zaidejas = "X"
 zaidejas_X = 0
 zaidejas_O = 0
+zaista_kartu = 0
+
 
 
 def print_lentele(lentele):
@@ -74,10 +76,12 @@ def isvalyti_lentele():
 
 
 def laimejimu_skaitiklis():
-    print("                     Rezultatas:")
-    print(f"                    Zaidejas X = {zaidejas_X}")
-    print(f"                    Zaidejas O = {zaidejas_O}")
-
+    global zaidejas_X, zaidejas_O, zaista_kartu
+    zaista_kartu += 1
+    print("Rezultatas:")
+    print(f"Zaidejas X = {zaidejas_X}")
+    print(f"Zaidejas O = {zaidejas_O}")
+    print(f"Bendras zaidimu skaicius = {zaista_kartu}")
 
 while True:
     print_lentele(lentele)
