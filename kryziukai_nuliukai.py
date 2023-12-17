@@ -7,11 +7,11 @@ zaista_kartu = 0
 
 
 def print_lentele(lentele):
-    print("_____")
-    print(lentele[0] + "|" + lentele[1] + "|" + lentele[2], f"      Dabar zaidejo  {zaidejas}  ejimas")
-    print(lentele[3] + "|" + lentele[4] + "|" + lentele[5], )
-    print(lentele[6] + "|" + lentele[7] + "|" + lentele[8], f"      Pasirinkite zenklo pozicija skaiciais nuo 1 iki 9 ")
     print("¯¯¯¯¯")
+    print(f"{lentele[6]}|{lentele[7]}|{lentele[8]}      Dabar zaidejo {zaidejas} ejimas")
+    print(f"{lentele[3]}|{lentele[4]}|{lentele[5]}")
+    print(f"{lentele[0]}|{lentele[1]}|{lentele[2]}      Pasirinkite zenklo pozicija skaiciais nuo 1 iki 9")
+    print("_____")
 
 
 def zaidejo_input(lentele):
